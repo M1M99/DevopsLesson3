@@ -2,7 +2,7 @@
 
 namespace DevopsLesson3.Services
 {
-    public interface IProductService
+    public interface IProductRepository
     {
         IEnumerable<Product> GetProducts(int top = 0);
         Product? GetProductById(int productId);

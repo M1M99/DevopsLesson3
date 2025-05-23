@@ -7,6 +7,9 @@ using Entities;
 
 namespace WebApi.Test
 {
+
+    /// Bura Task Olan Hisse deyil 
+    //WepApi.Test => ProductServiceTeste Get Task Oradadi.
     [TestFixture]
     public class ProductTests
     {
@@ -98,7 +101,7 @@ namespace WebApi.Test
             var data = await getRes.Content.ReadFromJsonAsync<Product>();
             Assert.That(data, Is.Not.Null);
 
-            data.Id = await _client.GetAsync("/api/Product/Top?count=1");
+            //data.Id = await _client.GetAsync("/api/Product/Top?count=1");
             data.Name = "UpdatedFake";
             data.Price = 1234;
 

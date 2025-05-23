@@ -9,9 +9,9 @@ namespace DevopsLesson3.Controllers
     [ApiController]
     public class ProductController : ControllerBase
     {
-        private readonly IProductService _service;
+        private readonly IProductRepository _service;
 
-        public ProductController(IProductService service)
+        public ProductController(IProductRepository service)
         {
             _service = service;
         }
@@ -33,7 +33,6 @@ namespace DevopsLesson3.Controllers
         public ActionResult<Product> Post([FromBody] Product product)
         {
             var prod = _service.GetProducts();
-            product.Id = prod.Count() > 0 ? prod.Max(a => a.Id) + 1 : 1;
             _service.Add(product);
             return product;
         }     

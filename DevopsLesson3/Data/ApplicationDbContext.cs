@@ -7,7 +7,6 @@ namespace DevopsLesson3.Data
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> build):base(build)
         {
-            
         }
         public DbSet<Product> Products { get; set; }
     }
